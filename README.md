@@ -11,10 +11,10 @@ Each example is a small, self-contained script built around a developer use case
 interface. The agent sits behind a normal function you call from your own code, which is how these
 abilities show up in a real application.
 
-The agent uses `PlivoTools`, which ships with Agno, so a plain `pip install agno` is all you need.
-OpenAI is used only as the agent's LLM, to decide which tool to call. These examples trigger
-communication actions and do not include text-to-speech or speech-to-text, so they are not a
-voice-bot pipeline.
+`PlivoTools` ships with Agno. Install Agno, the OpenAI client, and the Plivo SDK with
+`pip install -r requirements.txt`. OpenAI is used only as the agent's LLM, to decide which tool to
+call. These examples trigger communication actions and do not include text-to-speech or
+speech-to-text, so they are not a voice-bot pipeline.
 
 ## Examples
 
