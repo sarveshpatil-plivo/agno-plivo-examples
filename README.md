@@ -102,8 +102,8 @@ The run prints two things. First, `PlivoTools` logs each API call as it happens,
 Plivo returns (a `message_uuid` for the SMS, a `request_uuid` for the call):
 
 ```
-INFO SMS sent. UUID: 5a8c1042-70af-4b95-a179-8eb9ff80ef38, to: +9194486xxxxx
-INFO Call placed. request_uuid: 612e6a41-f4fd-4386-9cf5-e3893ff1e32f, to: +9194486xxxxx
+INFO SMS sent. UUID: 5a8c1042-70af-4b95-a179-8eb9ff80ef38, to: +1415xxxxxxx
+INFO Call placed. request_uuid: 612e6a41-f4fd-4386-9cf5-e3893ff1e32f, to: +1415xxxxxxx
 ```
 
 Then the agent returns a short summary of what it did, which the script prints:
