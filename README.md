@@ -94,16 +94,27 @@ python examples/on_call_alerting.py
 
 ## What you see when it runs
 
-For the on-call example with a critical incident, the agent reasons about the severity, calls
-`send_sms` to notify the engineer, and then calls `make_call` to place a follow-up voice call. Both
-land on the destination number. Switch the severity to `warning` and it sends only the SMS.
+The `__main__` block in `on_call_alerting.py` fires a **critical** incident on `payments-api`. The
+agent judges that a critical severity needs both channels, so it makes two tool calls in order —
+`send_sms`, then `make_call` — and both reach the on-call number.
+
+The run prints two things. First, `PlivoTools` logs each API call as it happens, showing the id
+Plivo returns (a `message_uuid` for the SMS, a `request_uuid` for the call):
 
 ```
 INFO SMS sent. UUID: 5a8c1042-70af-4b95-a179-8eb9ff80ef38, to: +9194486xxxxx
 INFO Call placed. request_uuid: 612e6a41-f4fd-4386-9cf5-e3893ff1e32f, to: +9194486xxxxx
+```
+
+Then the agent returns a short summary of what it did, which the script prints:
+
+```
 - SMS Sent: Critical Alert for payments-api, error rate above 40%, checkout is failing. Immediate attention needed.
 - Call Placed: An outbound call has been initiated to ensure the engineer is informed immediately.
 ```
+
+Set the severity to `warning` instead and the agent sends only the SMS, no call. That is the point
+of the example — the channel is the agent's decision, not something you hard-code.
 
 ## License
 
