@@ -52,3 +52,11 @@ if __name__ == "__main__":
             appointment="a dental cleaning tomorrow at 3pm",
         )
     )
+    """
+    Example output (mobile number)
+
+    INFO Looked up number: +1415xxxxxxx
+    INFO SMS sent. UUID: 88aa9e96-dbd8-46e1-b94b-aef6409b6ea1, to: +1415xxxxxxx
+
+    - Reminder sent by SMS because the number is a mobile line.
+    """

@@ -1,14 +1,20 @@
 # agno + Plivo examples
 
+[![License MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+
 Runnable examples that give an [Agno](https://github.com/agno-agi/agno) agent real communication
-abilities through [Plivo](https://www.plivo.com) — sending SMS, placing voice calls, sending
-WhatsApp messages, verifying phone numbers, and looking up carrier details.
+abilities through [Plivo](https://www.plivo.com) — sending SMS, placing voice calls, and looking up
+the carrier and line type of a number.
 
 Each example is a small, self-contained script built around a developer use case. There is no chat
 interface. The agent sits behind a normal function you call from your own code, which is how these
 abilities show up in a real application.
 
 The agent uses `PlivoTools`, which ships with Agno, so a plain `pip install agno` is all you need.
+OpenAI is used only as the agent's LLM, to decide which tool to call. These examples trigger
+communication actions and do not include text-to-speech or speech-to-text, so they are not a
+voice-bot pipeline.
 
 ## Examples
 
@@ -60,6 +66,12 @@ Matches the firmness of an invoice reminder to how overdue it is — a gentle SM
 after a week, and a phone call once it is badly overdue. Call `remind_payment()` from your billing
 pipeline.
 
+## Prerequisites
+
+- Python 3.11 or newer
+- An OpenAI API key
+- A Plivo account with an SMS-enabled number (Auth ID, Auth Token, and the number)
+
 ## Setup
 
 1. Create and activate a virtual environment.
@@ -85,12 +97,14 @@ to a number on your Plivo account and `PLIVO_TO_NUMBER` to the destination you w
 
 ## Running an example
 
-Load the environment and run any script.
+Load the environment and run any of the scripts in `examples/`.
 
 ```
 export $(grep -v '^#' .env | xargs)
 python examples/on_call_alerting.py
 ```
+
+Every example ends with an "Example output" block showing what a run looks like.
 
 ## What you see when it runs
 

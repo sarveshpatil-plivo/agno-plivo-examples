@@ -47,3 +47,10 @@ def remind_payment(phone: str, amount: str, days_overdue: int) -> str:
 
 if __name__ == "__main__":
     print(remind_payment(os.environ["PLIVO_TO_NUMBER"], amount="$240", days_overdue=16))
+    """
+    Example output (16 days overdue)
+
+    INFO Call placed. request_uuid: e35cf3fb-fed8-4ae5-b562-46aa085675fc, to: +1415xxxxxxx
+
+    - A call was placed about the 16-day overdue invoice for $240.
+    """

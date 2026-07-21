@@ -35,3 +35,13 @@ def enrich_contact(raw_phone: str) -> str:
 
 if __name__ == "__main__":
     print(enrich_contact(os.environ["PLIVO_TO_NUMBER"]))
+    """
+    Example output
+
+    INFO Looked up number: +1415xxxxxxx
+
+    - Number (E.164): +1415xxxxxxx
+    - Country: United States
+    - Carrier: T-Mobile USA
+    - Line type: mobile
+    """
