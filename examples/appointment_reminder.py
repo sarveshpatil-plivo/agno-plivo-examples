@@ -21,7 +21,6 @@ reminder_agent = Agent(
     model=OpenAIChat(id="gpt-4o"),
     tools=[
         PlivoTools(
-            answer_url="https://s3.amazonaws.com/static.plivo.com/answer.xml",
             enable_lookup_number=True,
             enable_send_sms=True,
             enable_make_call=True,
@@ -33,6 +32,7 @@ reminder_agent = Agent(
         "First look up the number to find its line type.",
         "If it is a mobile, send one short SMS reminder.",
         "If it is a landline, place a voice call instead, since an SMS will not reach a landline.",
+        "When you place a call, use the answer URL https://s3.amazonaws.com/static.plivo.com/answer.xml with answer_method GET.",
         "Report which channel you used and why.",
     ],
     markdown=True,

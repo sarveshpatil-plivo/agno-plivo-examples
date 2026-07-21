@@ -21,7 +21,6 @@ billing_agent = Agent(
     model=OpenAIChat(id="gpt-4o"),
     tools=[
         PlivoTools(
-            answer_url="https://s3.amazonaws.com/static.plivo.com/answer.xml",
             enable_send_sms=True,
             enable_make_call=True,
         )
@@ -32,6 +31,7 @@ billing_agent = Agent(
         "A few days overdue: send one gentle SMS reminder.",
         "A week or more overdue: send a firmer SMS.",
         "Two weeks or more overdue: place a phone call so it is not missed.",
+        "When you place a call, use the answer URL https://s3.amazonaws.com/static.plivo.com/answer.xml with answer_method GET.",
         "Stay professional and never threatening.",
     ],
     markdown=True,

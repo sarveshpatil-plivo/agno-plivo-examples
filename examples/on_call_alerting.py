@@ -21,7 +21,6 @@ on_call_agent = Agent(
     model=OpenAIChat(id="gpt-4o"),
     tools=[
         PlivoTools(
-            answer_url="https://s3.amazonaws.com/static.plivo.com/answer.xml",
             enable_send_sms=True,
             enable_make_call=True,
         )
@@ -32,6 +31,7 @@ on_call_agent = Agent(
         f"Send alerts from the number {os.environ.get('PLIVO_FROM_NUMBER', '')}.",
         "For a warning severity, send one concise SMS.",
         "For a critical severity, send an SMS and also place a phone call so the engineer is reached immediately.",
+        "When you place a call, use the answer URL https://s3.amazonaws.com/static.plivo.com/answer.xml with answer_method GET.",
         "Keep messages short and factual.",
     ],
     markdown=True,

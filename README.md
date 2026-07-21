@@ -21,23 +21,6 @@ Plivo. A warning sends one SMS. A critical incident sends an SMS and also places
 the engineer is reached immediately. Drop it into a monitoring pipeline and call `handle_incident()`
 when an alert fires. The agent decides the channel from the severity, you do not hard-code it.
 
-### Signup verification
-
-`examples/signup_verification.py`
-
-Confirms a new user controls their phone number during signup. The agent checks the number is a
-mobile line, sends a one-time code, and validates the code the user enters. Call
-`start_verification()` from your signup endpoint and `complete_verification()` from your verify
-endpoint. Verify must be enabled on the Plivo account for the code to send.
-
-### Plans coordinator
-
-`examples/plans_coordinator.py`
-
-A small assistant that invites friends to a get-together over each person's preferred channel —
-WhatsApp, SMS, or a phone call for the friend who never checks messages. Call `invite_friends()`
-from your own code. WhatsApp delivery needs a WhatsApp-enabled Plivo sender.
-
 ### Lead-list hygiene gate
 
 `examples/lead_hygiene.py`
@@ -114,6 +97,13 @@ python examples/on_call_alerting.py
 For the on-call example with a critical incident, the agent reasons about the severity, calls
 `send_sms` to notify the engineer, and then calls `make_call` to place a follow-up voice call. Both
 land on the destination number. Switch the severity to `warning` and it sends only the SMS.
+
+```
+INFO SMS sent. UUID: 5a8c1042-70af-4b95-a179-8eb9ff80ef38, to: +9194486xxxxx
+INFO Call placed. request_uuid: 612e6a41-f4fd-4386-9cf5-e3893ff1e32f, to: +9194486xxxxx
+- SMS Sent: Critical Alert for payments-api, error rate above 40%, checkout is failing. Immediate attention needed.
+- Call Placed: An outbound call has been initiated to ensure the engineer is informed immediately.
+```
 
 ## License
 
