@@ -38,6 +38,45 @@ A small assistant that invites friends to a get-together over each person's pref
 WhatsApp, SMS, or a phone call for the friend who never checks messages. Call `invite_friends()`
 from your own code. WhatsApp delivery needs a WhatsApp-enabled Plivo sender.
 
+### Lead-list hygiene gate
+
+`examples/lead_hygiene.py`
+
+A pre-flight filter for an outreach pipeline. The agent looks up every number in a raw lead list,
+keeps only the mobile lines, and reports which leads were dropped and why. Call `screen_leads()`
+before you spend anything contacting a list.
+
+### Checkout risk check
+
+`examples/checkout_risk_check.py`
+
+Runs at the checkout step. The agent looks up the buyer's phone, treats a voip line or a country
+that does not match the order as high risk, and for a risky order sends an SMS step-up so the buyer
+has to confirm. Call `assess_checkout()` from your checkout handler.
+
+### Contact enrichment
+
+`examples/contact_enrichment.py`
+
+Turns a messy phone string into a clean record — normalized E.164 format, country, carrier, and line
+type — ready to write back to a CRM. Call `enrich_contact()` from your own code.
+
+### Appointment reminder with fallback
+
+`examples/appointment_reminder.py`
+
+Sends a reminder on a channel the number can actually receive. The agent looks up the number, sends
+an SMS to a mobile, and places a voice call instead to a landline, since an SMS will not reach one.
+Call `send_reminder()` from your scheduler.
+
+### Payment reminder ladder
+
+`examples/payment_reminder.py`
+
+Matches the firmness of an invoice reminder to how overdue it is — a gentle SMS early, a firmer SMS
+after a week, and a phone call once it is badly overdue. Call `remind_payment()` from your billing
+pipeline.
+
 ## Setup
 
 1. Create and activate a virtual environment.
