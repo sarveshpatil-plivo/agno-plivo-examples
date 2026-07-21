@@ -127,8 +127,8 @@ Then the agent returns a short summary of what it did, which the script prints:
 - Call Placed: An outbound call has been initiated to ensure the engineer is informed immediately.
 ```
 
-Set the severity to `warning` instead and the agent sends only the SMS, no call. That is the point
-of the example — the channel is the agent's decision, not something you hard-code.
+Set the severity to `warning` instead and the agent sends only the SMS, no call. The channel is the
+agent's decision, not something which needs to be hardcoded.
 
 ## License
 
