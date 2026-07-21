@@ -53,10 +53,7 @@ if __name__ == "__main__":
         )
     )
     """
-    Example output (mobile number)
+    Example output
 
-    INFO Looked up number: +1415xxxxxxx
-    INFO SMS sent. UUID: 88aa9e96-dbd8-46e1-b94b-aef6409b6ea1, to: +1415xxxxxxx
-
-    - Reminder sent by SMS because the number is a mobile line.
+    "Reminder: you have a dental cleaning tomorrow at 3pm. Reply to reschedule."
     """

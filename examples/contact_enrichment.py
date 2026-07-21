@@ -38,8 +38,6 @@ if __name__ == "__main__":
     """
     Example output
 
-    INFO Looked up number: +1415xxxxxxx
-
     - Number (E.164): +1415xxxxxxx
     - Country: United States
     - Carrier: T-Mobile USA

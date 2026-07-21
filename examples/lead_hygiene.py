@@ -45,12 +45,8 @@ if __name__ == "__main__":
     """
     Example output
 
-    INFO Looked up number: +1415xxxxxxx
-    INFO Looked up number: +14155550100
-    INFO Looked up number: +14155550101
-
     Reachable mobile numbers
-    - +1415xxxxxxx (mobile)
+    - +1415xxxxxxx
 
     Dropped
     - +14155550100 (line type could not be determined)

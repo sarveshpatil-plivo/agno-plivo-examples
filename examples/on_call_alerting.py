@@ -57,9 +57,7 @@ if __name__ == "__main__":
     """
     Example output (critical incident)
 
-    INFO SMS sent. UUID: 5a8c1042-70af-4b95-a179-8eb9ff80ef38, to: +1415xxxxxxx
-    INFO Call placed. request_uuid: 612e6a41-f4fd-4386-9cf5-e3893ff1e32f, to: +1415xxxxxxx
-
-    - SMS Sent: Critical Alert for payments-api, error rate above 40 percent, checkout is failing.
-    - Call Placed: An outbound call has been placed so the engineer is reached immediately.
+    The on-call engineer receives this SMS:
+      "Critical: payments-api error rate above 40% and checkout is failing. Please respond."
+    and an outbound call is placed so they are reached immediately.
     """

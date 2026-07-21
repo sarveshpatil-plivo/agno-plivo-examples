@@ -50,7 +50,5 @@ if __name__ == "__main__":
     """
     Example output (16 days overdue)
 
-    INFO Call placed. request_uuid: e35cf3fb-fed8-4ae5-b562-46aa085675fc, to: +1415xxxxxxx
-
-    - A call was placed about the 16-day overdue invoice for $240.
+    An outbound call is placed to the customer about the $240 invoice that is 16 days overdue.
     """

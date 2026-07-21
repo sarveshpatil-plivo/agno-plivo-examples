@@ -48,11 +48,9 @@ def assess_checkout(phone: str, order_country: str) -> str:
 if __name__ == "__main__":
     print(assess_checkout(os.environ["PLIVO_TO_NUMBER"], order_country="United States"))
     """
-    Example output (buyer number in a country that does not match the order)
+    Example output (buyer number's country does not match the order)
 
-    INFO Looked up number: +4420xxxxxxx
-    INFO SMS sent. UUID: 4940bddf-950e-4164-8eb6-8f42afb35373, to: +4420xxxxxxx
-
-    - Risk Assessment: High Risk. The phone number's country does not match the order country.
-    - Action: A confirmation SMS was sent and the order is held for confirmation.
+    The buyer receives this SMS:
+      "Please confirm your recent order. Reply YES to verify it was you."
+    and the order is held until they confirm.
     """
